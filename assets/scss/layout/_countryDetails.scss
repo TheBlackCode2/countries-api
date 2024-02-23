@@ -1,0 +1,109 @@
+@use '../util/' as *;
+@use 'sass:map';
+
+#country-details
+{
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+
+    .wrapper
+    {
+        display: flex;
+        align-items: center;
+        gap: rem(80);
+
+        @include large-devices
+        {
+            flex-direction: column;
+            max-width: rem(500);
+            align-items: unset;
+        }
+    }
+    .country-flag
+    {
+        width: min(rem(480), 100%);
+        aspect-ratio: 1.66;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: rem(5);
+        box-shadow: $main-box-shadow;
+        flex-shrink: 1;
+    }
+    .details
+    {
+        flex-grow: 1;
+        flex-shrink: 3;
+    }
+    #name
+    {
+        font-size: rem(26);
+        font-weight: map.get($font-weights, 'extra-bold');
+        color: var(--text-color);
+        padding-bottom: rem(30);
+    }
+    .global-info
+    {
+        display: flex;
+        align-items: flex-start;
+        
+        @include extra-small-devices
+        {
+            flex-direction: column;
+        }
+
+        nav
+        {
+            flex-basis: 50%;
+        }
+        p
+        {
+            display: flex;
+            color: var(--text-color);
+            font-size: rem(16);
+            font-weight: map.get($font-weights, 'semi-bold');
+            padding: 4px;
+            span
+            {
+                font-weight: map.get($font-weights, 'light');
+                margin-left: rem(5);
+            }
+        }
+    }
+    .border-countries
+    {
+        padding-top: rem(30);
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(5);
+
+        &::before
+        {
+            content: 'Border Countries: ';
+            display: inline-block;
+            color: var(--text-color);
+            font-size: rem(16);
+            font-weight: map.get($font-weights, 'semi-bold');
+            padding: 4px;
+        }
+        
+        p
+        {
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+            font-size: rem(16);
+            font-weight: map.get($font-weights, 'semi-bold');
+            span
+            {
+                font-weight: map.get($font-weights, 'light');
+                margin-left: rem(20);
+
+                .primary-btn
+                {
+                    display: inline-block;
+                    margin: 0 rem(2);
+                }
+            }
+        }
+    }
+}

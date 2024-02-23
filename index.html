@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- =================== Page Icon =================== -->
+    <link rel="shortcut icon" href="./" type="image/x-icon">
+    <!-- =================== Page Style =================== -->
+    <link rel="stylesheet" href="./assets/scss/style.css">
+    <!-- =================== Page Title =================== -->
+    <title>Countries API</title>
+    <!-- =================== Head Script(s) =================== -->
+    <script type="module" src="./assets/js/load.js"></script>
+</head>
+<body class="light-mode">
+
+    <!-- =================== Start Main Header =================== -->
+    <header id="header">
+        <div class="wrapper flex-ac-js">
+            <h1>Where in the world?</h1>
+            <div class="mode">
+                <ion-icon name="moon"></ion-icon>
+                <span>Dark Mode</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================== Start Top Bar Section =================== -->
+    <section id="top-bar">
+        <div class="wrapper flex-ac-js">
+            <div class="search-box">
+                <ion-icon class="search-icon" name="search-outline"></ion-icon>
+                <input id="search-input" type="search" placeholder="Search for a country...">
+            </div>
+            <div class="filter-box">
+                <h3 class="flex-ac-js">
+                    <span>Filter by region</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </h3>
+                <ul class="filter-list">
+                    <li filter="">All</li>
+                    <li filter="africa">Africa</li>
+                    <li filter="americas">America</li>
+                    <li filter="asia">Asia</li>
+                    <li filter="europe">Europe</li>
+                    <li filter="oceania">Oceania</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== Start Countries Section =================== -->
+    <section id="countries">
+        <div class="wrapper"></div>
+    </section>
+    
+    
+    <!-- =================== Ionicons Setup =================== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- =================== Script(s) =================== -->
+    <script src="./assets/js/theme.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+    <script src="./assets/js/clear_storage.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+@use '../util/' as *;
+@use 'sass:map';
+
+#countries
+{
+    padding-bottom: rem(50);
+
+    .wrapper
+    {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(60);
+
+        @include medium-devices
+        {
+            gap: rem(40);
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include small-devices
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include extra-small-devices
+        {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .country-box
+    {
+        background-color: var(--element-bg-color);
+        box-shadow: $main-box-shadow;
+        overflow: hidden;
+        border-radius: rem(5);
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover
+        {
+            transform: translateY(rem(-10));
+        }
+
+        img 
+        {
+            width: 100%;
+            aspect-ratio: 1.66;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .country-info
+        {
+            padding: rem(20) rem(20) rem(40);
+
+            h2
+            {
+                font-size: rem(16);
+                font-weight: map.get($font-weights, 'extra-bold');
+                margin-bottom: rem(10);
+                color: var(--text-color);
+            }
+            p
+            {  
+                font-size: rem(13);
+                font-weight: map.get($font-weights, 'semi-bold');
+                color: var(--text-color);
+
+                span
+                {
+                    // color: $dark-gray-color;
+                    font-weight: map.get($font-weights, 'light');
+                }
+            }
+        }
+    }
+}

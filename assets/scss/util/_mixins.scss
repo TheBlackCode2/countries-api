@@ -1,0 +1,21 @@
+@use './functions' as *;
+
+@mixin large-devices
+{
+    @media (max-width: rem(1040)) { @content; }
+}
+
+@mixin medium-devices
+{
+    @media (max-width: rem(991)) { @content; }
+}
+
+@mixin small-devices
+{
+    @media (max-width: rem(794)) { @content; }
+}
+
+@mixin extra-small-devices
+{
+    @media (max-width: rem(575)) { @content; }
+}

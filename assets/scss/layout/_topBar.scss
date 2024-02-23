@@ -1,0 +1,100 @@
+@use '../util/' as *;
+@use 'sass:map';
+
+#top-bar
+{
+    .wrapper
+    {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+
+        @include small-devices
+        {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: rem(20);
+            padding-top: rem(40);
+            padding-bottom: rem(40);
+        }
+    }
+    .search-box
+    {
+        display: flex;
+        align-items: center;
+        background-color: var(--element-bg-color);
+        box-shadow: $main-box-shadow;
+        padding: rem(18) rem(20);
+        border-radius: rem(5);
+        font-size: rem(18);
+        color: var(--text-color);
+        width: rem(400);
+
+        .search-icon
+        {
+            flex-shrink: 0;
+        }
+
+        #search-input
+        {
+            font-size: rem(15);
+            font-weight: map.get($font-weights, 'light');
+            color: var(--text-color);
+            margin-left: 12px;
+            width: 100%;
+        }
+
+        @include small-devices
+        {
+            width: 100%;
+        }
+    }
+    .filter-box
+    {
+        position: relative;
+        z-index: 10;
+        background-color: var(--element-bg-color);
+        box-shadow: $main-box-shadow;
+        padding: rem(18) rem(20);
+        border-radius: rem(5);
+        width: min(180px, 100%);
+        cursor: pointer;
+
+        h3
+        {
+            font-size: rem(15);
+            font-weight: map.get($font-weights, 'semi-bold');
+            color: var(--text-color);
+        }
+        .filter-list
+        {
+            position: absolute;
+            top: calc(100% + rem(5));
+            left: 0;
+            width: 100%;
+            background-color: inherit;
+            box-shadow: inherit;
+            border-radius: inherit;
+            color: var(--text-color);
+            padding: 15px 20px;
+            opacity: 0;
+            visibility: hidden;
+
+            li
+            {
+                font-size: rem(14);
+                padding-top: rem(5);
+                padding-bottom: rem(5);
+            }
+        }
+
+        &.open
+        {
+            .filter-list
+            {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }    
+
+}

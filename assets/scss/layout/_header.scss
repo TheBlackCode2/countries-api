@@ -1,0 +1,35 @@
+@use '../util/' as *;
+@use 'sass:map';
+
+#header
+{
+    background-color: var(--element-bg-color);
+    box-shadow: $main-box-shadow;
+    
+    .wrapper
+    {
+        padding-top: rem(20);
+        padding-bottom: rem(20);
+    }
+    h1
+    {
+        font-size: rem(24);
+        font-weight: map.get($font-weights, 'extra-bold');
+        color: var(--text-color);
+
+        @include extra-small-devices
+        {
+            font-size: rem(18);
+        }
+    }
+    .mode
+    {
+        display: flex;
+        align-items: center;
+        color: var(--text-color);
+        gap: rem(8);
+        font-size: rem(14);
+        font-weight: map.get($font-weights, 'semi-bold');
+        cursor: pointer;
+    }
+}

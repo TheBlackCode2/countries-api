@@ -1,0 +1,19 @@
+@use './functions' as *;
+
+/* =================== Colors =================== */
+$dark-blue-color: hsl(209, 23%, 22%); // Dark Mode Elements
+$very-dark-blue-bg-color: hsl(207, 26%, 17%); // Dark Mode Background
+$very-dark-blue-text-color: hsl(200, 15%, 8%); // Light Mode Text
+$dark-gray-color: hsl(0, 0%, 52%); // Light Mode Input
+$very-light-gray-bg-color: hsl(0, 0%, 98%); // Light Mode Background
+$light-color: hsl(0, 0, 100%); // Dark Mode Text & Light Mode Elements
+$dark-color: hsl(0, 0, 0%);
+
+/* =================== Font(s) =================== */
+$primary-font: 'Nunito Sans', sans-serif;
+$font-weights: ('light': 300, 'semi-bold' : 600, 'extra-bold' : 800);
+/* =================== Sizes =================== */
+
+
+/* =================== Values =================== */
+$main-box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.1);
